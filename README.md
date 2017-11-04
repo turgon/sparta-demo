@@ -30,4 +30,19 @@ Finally, provision the service!
 $ go run main.go provision --s3Bucket the-bucket
 ```
 
+## Hitting the service
+
+You will need to grab the new API Gateway's base url from the `provision` output. It's in an output log line with `Key=APIGatewayURL`. It should look something like `https://blablahblah.execute-api.us-east-1.amazonaws.com/prod`
+
+```
+$ export baseURL=https://blablahblah.execute-api.us-east-1.amazonaws.com/prod
+```
+
+Now you can make requests:
+
+```
+$ curl -sv $baseURL/prod/hello/world/test
+```
+
+
 [1]: http://gosparta.io/docs/apigateway/example1/
