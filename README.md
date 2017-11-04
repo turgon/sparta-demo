@@ -1,1 +1,1 @@
-# sparta-demp
+# sparta-demo
